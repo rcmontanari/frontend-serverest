@@ -1,12 +1,12 @@
 describe('Testes do endpoint /usuarios', () => {
 
     const API_URL = Cypress.env('API_BASE_URL')
-    const id_produto = Cypress.env('ID_PRODUTO')
+    const ID_PRODUTO = Cypress.env('ID_PRODUTO')
 
     it.only('Validar a busca de um produto pelo id', () => {
         cy.request({
             method: 'GET',
-            url: `${API_URL}/produtos/${id_produto}`
+            url: `${API_URL}/produtos/${ID_PRODUTO}`
         }).should(({ status, body }) => {
             const { nome, preco, descricao, quantidade } = body
             
